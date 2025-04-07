@@ -1,2 +1,22 @@
+Tested on python 3.10
 
-python src/manage.py create_tables
+Based on Django. All unused Django's features are turned off.
+
+Postman collection is in root proj dir:
+`socialnet.postman_collection.json`
+
+Set up project:
+```
+python3 -m venv venv
+source venv/bin/activate
+pip install requirements.txt
+```
+
+Run db:
+```
+docker compose up -d
+```
+
+Run project:
+```
+./start.sh

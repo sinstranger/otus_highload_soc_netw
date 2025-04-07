@@ -1,0 +1,71 @@
+{
+  "info": {
+    "name": "SocialNet API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Register User",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"first_name\": \"Ivan\",\n  \"last_name\": \"Ivanov\",\n  \"birthdate\": \"1990-01-01\",\n  \"gender\": \"male\",\n  \"interests\": \"reading, coding\",\n  \"city\": \"Moscow\",\n  \"password\": \"securepass123\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/user/register",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["user", "register"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login User",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"first_name\": \"Ivan\",\n  \"password\": \"securepass123\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/login",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["login"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get User Profile by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/user/get/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["user", "get", "1"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
