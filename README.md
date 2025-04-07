@@ -1,2 +1,2 @@
 
-python manage.py create_tables
+python src/manage.py create_tables
