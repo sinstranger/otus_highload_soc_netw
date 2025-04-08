@@ -11,5 +11,15 @@ services:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: db
 
+  pg_admin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "81:80"
+    depends_on:
+      - db
+
 volumes:
   postgres_data:
