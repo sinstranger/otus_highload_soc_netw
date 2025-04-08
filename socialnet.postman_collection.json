@@ -66,6 +66,37 @@
         }
       },
       "response": []
+    },
+    {
+      "name": "User Search",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/user/search?first_name=Конст&last_name=Оси",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "user",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "first_name",
+              "value": "Конст"
+            },
+            {
+              "key": "last_name",
+              "value": "Оси"
+            }
+          ]
+        },
+        "description": "Поиск анкет по префиксу имени и фамилии"
+      },
+      "response": []
     }
   ]
 }

@@ -20,3 +20,12 @@ docker compose up -d
 Run project:
 ```
 ./start.sh
+```
+
+# Homework 2
+
+add users to db
+```
+cd src && python manage.py shell < scripts/load_users_from_scv.py
+```
+

@@ -49,3 +49,16 @@ def check_password(first_name, password):
             cur.execute("SELECT id FROM users WHERE first_name = %s AND password_hash = crypt(%s, password_hash)", (first_name, password))
             row = cur.fetchone()
             return row[0] if row else None
+
+
+def search_users(first_name_prefix, last_name_prefix):
+    conn = get_conn()
+    with conn:
+        with conn.cursor() as cur:
+            cur.execute("""
+                SELECT id, first_name, last_name, birthdate, gender, interests, city
+                FROM users
+                WHERE first_name LIKE %s AND last_name LIKE %s
+                ORDER BY id
+            """, (f"{first_name_prefix}%", f"{last_name_prefix}%"))
+            return cur.fetchall()
