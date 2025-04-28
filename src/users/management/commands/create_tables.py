@@ -8,8 +8,8 @@ class Command(BaseCommand):
     help = 'Creates tables'
 
     def handle(self, *args, **options):
-        conn = get_conn()
-        with conn:
-            with conn.cursor() as cur:
-                cur.execute(CREATE_TABLES_CLAUSE)
-        print('Tables created')
+        with get_conn() as conn:
+            with conn:
+                with conn.cursor() as cur:
+                    cur.execute(CREATE_TABLES_CLAUSE)
+            print('Tables created')
