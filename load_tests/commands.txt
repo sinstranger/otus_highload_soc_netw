@@ -1,0 +1,5 @@
+-t - threads
+-c - connections
+-d - how long
+
+wrk -t1 -c100 -d30s -s search_random.lua http://localhost:8000
